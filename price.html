@@ -749,13 +749,7 @@
                         <input type="text" placeholder="Ваше ФИО" required>
                         <input type="text" placeholder="ФИО пациента" required>
                         
-                        <input type="number" placeholder="Ваш номер телефона" required>
-                     <input   type="tel"
-  placeholder="+7 (___) ___-__-__"
-  pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}"
-  maxlength="18"
-  required
-  oninput="formatPhoneNumber(this)"/>
+                     <input   type="tel" placeholder="Ваш номер телефона" pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}"  maxlength="18"  required oninput="formatPhoneNumber(this)"/>
                         <input type="number" placeholder="Возраст пациента" required>
                         
                         <input type="email" placeholder="Ваш электронная почта" required>
