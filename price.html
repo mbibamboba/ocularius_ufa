@@ -934,7 +934,7 @@ function formatPhoneNumber(input) {
 
 
       
-        document.addEventListener("DOMContentLoaded", function () {
+          document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById("submitButton");
     const notification = document.getElementById("notification");
     const formFields = document.querySelectorAll("input[required]");
@@ -952,13 +952,15 @@ function formatPhoneNumber(input) {
             } else {
                 field.classList.remove("error");
             }
-        });
-        if (!checkbox.checked) {
+
+if (!checkbox.checked) {
             allFilled = false;
             checkbox.classList.add("error");
         } else {
             checkbox.classList.remove("error");
         }
+        });
+        
 
         if (allFilled) {
             notification.style.display = "block";
@@ -971,9 +973,6 @@ function formatPhoneNumber(input) {
         }
     });
 });
-
-
-
 
 
         document.addEventListener("DOMContentLoaded", function () {
