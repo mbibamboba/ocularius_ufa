@@ -937,31 +937,41 @@ function formatPhoneNumber(input) {
         document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById("submitButton");
     const notification = document.getElementById("notification");
-    const formFields = document.querySelectorAll("input[required]"); 
+    const formFields = document.querySelectorAll("input[required]");
+    const checkbox = document.getElementById("agreement"); 
+
     submitButton.addEventListener("click", function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         let allFilled = true;
+
         formFields.forEach(function (field) {
             if (!field.value) {
-                allFilled = false; 
-                field.classList.add("error"); 
+                allFilled = false;
+                field.classList.add("error");
             } else {
                 field.classList.remove("error");
             }
         });
+        if (!checkbox.checked) {
+            allFilled = false;
+            checkbox.classList.add("error");
+        } else {
+            checkbox.classList.remove("error");
+        }
 
         if (allFilled) {
-            notification.style.display = "block"; 
-            
+            notification.style.display = "block";
+
             setTimeout(function () {
-                notification.style.display = "none"; 
-            }, 6000); 
+                notification.style.display = "none";
+            }, 6000);
         } else {
-            alert("Пожалуйста, заполните все поля."); 
+            alert("Пожалуйста, заполните все поля и согласитесь с условиями.");
         }
     });
 });
+
 
 
 
@@ -972,7 +982,7 @@ function formatPhoneNumber(input) {
     const closeModalButton = document.getElementById("closeModal");
 
     openModalButton.addEventListener("click", function (e) {
-        e.preventDefault(); // Предотвратить переход по ссылке
+        e.preventDefault(); 
         modal.style.display = "block"; // Показать модальное окно
     });
 
