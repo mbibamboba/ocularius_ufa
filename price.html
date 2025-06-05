@@ -934,45 +934,36 @@ function formatPhoneNumber(input) {
 
 
       
-          document.addEventListener("DOMContentLoaded", function () {
-    const submitButton = document.getElementById("submitButton");
-    const notification = document.getElementById("notification");
-    const formFields = document.querySelectorAll("input[required]");
-    const checkbox = document.getElementById("agreement"); 
-
-    submitButton.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        let allFilled = true;
-
-        formFields.forEach(function (field) {
-            if (!field.value) {
-                allFilled = false;
-                field.classList.add("error");
-            } else {
-                field.classList.remove("error");
-            }
-
-if (!checkbox.checked) {
-            allFilled = false;
-            checkbox.classList.add("error");
-        } else {
-            checkbox.classList.remove("error");
-        }
-        });
-        
-
-        if (allFilled) {
-            notification.style.display = "block";
-
-            setTimeout(function () {
-                notification.style.display = "none";
-            }, 6000);
-        } else {
-            alert("Пожалуйста, заполните все поля и согласитесь с условиями.");
-        }
-    });
-});
+           document.addEventListener("DOMContentLoaded", function () {
+          const submitButton = document.getElementById("submitButton");
+          const notification = document.getElementById("notification");
+          const formFields = document.querySelectorAll("input[required]"); 
+          submitButton.addEventListener("click", function (event) {
+              event.preventDefault(); 
+      
+              let allFilled = true;
+              formFields.forEach(function (field) {
+                  if (!field.value) {
+                      allFilled = false; 
+                      field.classList.add("error"); 
+                  } else {
+                      field.classList.remove("error");
+                  }
+              });
+      
+              if (allFilled) {
+                  notification.style.display = "block"; 
+                  
+                  setTimeout(function () {
+                      notification.style.display = "none"; 
+                  }, 6000); 
+              } else {
+                  alert("Пожалуйста, заполните все поля."); 
+              }
+          });
+      });
+      
+      
 
 
         document.addEventListener("DOMContentLoaded", function () {
